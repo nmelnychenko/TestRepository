@@ -6,22 +6,52 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        p {
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-    <ul>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-    </ul>
-    <div>
-        <p>Lorem2</p>
-    </div>
-    <div class="new-block">
-        <p>Hello</p>
-    </div>
+    <!-- Task 1 -->
+    <p id="task-1"></p>
+
+    <!-- Task 2 -->
+    <form id="form-task-2">
+        <input type="text" name="indexInput" placeholder="index">
+        <input type="text" name="arrValue" placeholder="value">
+        <input type="button" id="task2-button" onclick="changeArrElement()"></input>
+    </form>
+    <p id="task2-output"></p>
+
+
+
+    <script type="text/javascript">
+        // Task 1
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        var taskOneOutput = document.getElementById('task-1');
+        
+        taskOneOutput.innerHTML = arr;
+
+        // Task 2
+        var arr2 = [1,2,3,4,5,6,7,8,9,10];
+        var form = document.getElementById('form-task-2');
+        var taskTwoOutput = document.getElementById('task2-output');
+        var taskTwoButton = document.getElementById('task2-button');
+        
+        function changeArrElement() {
+            var indexInput = form.indexInput.value;
+            var arrValue = form.arrValue.value;
+
+            if (indexInput >= 0 && indexInput < 10) {
+                arr2[indexInput] = arrValue;
+                taskTwoOutput.innerHTML = arr2;
+            } else {
+                alert('wrong index');
+            }
+        }
+
+    </script>
 </body>
-</html>
+</html> 
